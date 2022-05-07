@@ -9,10 +9,75 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:text="Calculator"
+
+        app:layout_constraintBottom_toTopOf="@+id/navigationButtons"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TableLayout
+        android:id="@+id/navigationButtons"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_centerVertical="true"
+        android:gravity="center"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TableRow
+            android:id="@+id/tblRowOne"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btnBasicMode"
+                android:text="Basic Mode"
+                android:layout_height="80dp"
+                android:layout_width="match_parent"
+                />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tblRowTwo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btnScientificMode"
+                android:text="Scientific Mode"
+                android:layout_height="80dp"
+                android:layout_width="match_parent"
+                />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tblRowThree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btnProgrammerMode"
+                android:text="Programmer Mode"
+                android:layout_height="80dp"
+                android:layout_width="match_parent"
+                />
+
+        </TableRow>
+
+    </TableLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
