@@ -42,6 +42,7 @@
                 android:text="Basic Mode"
                 android:layout_height="80dp"
                 android:layout_width="match_parent"
+                android:onClick="onCLick"
                 />
 
         </TableRow>
@@ -58,6 +59,7 @@
                 android:text="Scientific Mode"
                 android:layout_height="80dp"
                 android:layout_width="match_parent"
+                android:onClick="onCLick"
                 />
 
         </TableRow>
@@ -69,11 +71,13 @@
             android:layout_margin="5dp"
             android:gravity="center">
 
+
             <Button
                 android:id="@+id/btnProgrammerMode"
                 android:text="Programmer Mode"
                 android:layout_height="80dp"
                 android:layout_width="match_parent"
+                android:onClick="onCLick"
                 />
 
         </TableRow>
