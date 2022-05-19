@@ -40,206 +40,206 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <Button
-            android:id="@+id/button25"
+            android:id="@+id/btnEquals"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button"
+            android:text="@string/btnEquals"
             android:textColor="@color/tanAccent"
             android:background="@drawable/button_background"
-            app:layout_constraintStart_toEndOf="@+id/button26"
-            app:layout_constraintTop_toBottomOf="@+id/button41" />
+            app:layout_constraintStart_toEndOf="@+id/btnDecimal"
+            app:layout_constraintTop_toBottomOf="@+id/btnAdd" />
 
         <Button
-            android:id="@+id/button26"
+            android:id="@+id/btnDecimal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button"
+            android:text="@string/btnDecimal"
             android:textColor="@color/tanAccent"
             android:background="@drawable/button_background"
-            app:layout_constraintStart_toEndOf="@+id/button27"
-            app:layout_constraintTop_toBottomOf="@+id/button42" />
+            app:layout_constraintStart_toEndOf="@+id/btnZero"
+            app:layout_constraintTop_toBottomOf="@+id/btnThree" />
 
         <Button
-            android:id="@+id/button27"
+            android:id="@+id/btnZero"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Button"
+            android:text="@string/btnZero"
             android:textColor="@color/tanAccent"
             android:background="@drawable/button_background"
-            app:layout_constraintEnd_toEndOf="@+id/button43"
+            app:layout_constraintEnd_toEndOf="@+id/btnTwo"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/button44"
-            app:layout_constraintTop_toBottomOf="@+id/button44" />
+            app:layout_constraintStart_toStartOf="@+id/btnOne"
+            app:layout_constraintTop_toBottomOf="@+id/btnOne" />
 
         <Button
-            android:id="@+id/button28"
+            android:id="@+id/btnBackspace"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Button"
             android:textColor="@color/tanAccent"
             android:background="@drawable/button_background"
-            app:layout_constraintEnd_toEndOf="@+id/button32"
-            app:layout_constraintStart_toStartOf="@+id/button32"
+            app:layout_constraintEnd_toEndOf="@+id/btnDivide"
+            app:layout_constraintStart_toStartOf="@+id/btnDivide"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/button29"
+            android:id="@+id/btnParenthesesOpen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button"
+            android:text="@string/btnParenthesesOpen"
             android:textColor="@color/tanAccent"
             android:background="@drawable/button_background"
-            app:layout_constraintStart_toEndOf="@+id/button30"
-            app:layout_constraintTop_toBottomOf="@+id/button28" />
+            app:layout_constraintStart_toEndOf="@+id/btnClear"
+            app:layout_constraintTop_toBottomOf="@+id/btnBackspace" />
 
         <Button
-            android:id="@+id/button30"
+            android:id="@+id/btnClear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button"
+            android:text="@string/btnClear"
             android:textColor="@color/tanAccent"
             android:background="@drawable/button_background"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button28" />
+            app:layout_constraintTop_toBottomOf="@+id/btnBackspace" />
 
         <Button
-            android:id="@+id/button31"
+            android:id="@+id/btnParenthesesClose"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button"
+            android:background="@drawable/button_background"
+            android:text="@string/btnParenthesesClose"
+            android:textColor="@color/tanAccent"
+            app:layout_constraintStart_toEndOf="@+id/btnParenthesesOpen"
+            app:layout_constraintTop_toBottomOf="@+id/btnBackspace" />
+
+        <Button
+            android:id="@+id/btnDivide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btnDivide"
             android:textColor="@color/tanAccent"
             android:background="@drawable/button_background"
-            app:layout_constraintStart_toEndOf="@+id/button29"
-            app:layout_constraintTop_toBottomOf="@+id/button28" />
+            app:layout_constraintStart_toEndOf="@+id/btnParenthesesClose"
+            app:layout_constraintTop_toBottomOf="@+id/btnBackspace" />
 
         <Button
-            android:id="@+id/button32"
+            android:id="@+id/btnMultiply"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button"
+            android:text="@string/btnMultiply"
             android:textColor="@color/tanAccent"
             android:background="@drawable/button_background"
-            app:layout_constraintStart_toEndOf="@+id/button31"
-            app:layout_constraintTop_toBottomOf="@+id/button28" />
+            app:layout_constraintStart_toEndOf="@+id/btnNine"
+            app:layout_constraintTop_toBottomOf="@+id/btnDivide" />
 
         <Button
-            android:id="@+id/button33"
+            android:id="@+id/btnNine"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button"
+            android:text="@string/btnNine"
             android:textColor="@color/tanAccent"
             android:background="@drawable/button_background"
-            app:layout_constraintStart_toEndOf="@+id/button34"
-            app:layout_constraintTop_toBottomOf="@+id/button32" />
+            app:layout_constraintStart_toEndOf="@+id/btnEight"
+            app:layout_constraintTop_toBottomOf="@+id/btnParenthesesClose" />
 
         <Button
-            android:id="@+id/button34"
+            android:id="@+id/btnEight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button"
+            android:text="@string/btnEight"
             android:textColor="@color/tanAccent"
             android:background="@drawable/button_background"
-            app:layout_constraintStart_toEndOf="@+id/button35"
-            app:layout_constraintTop_toBottomOf="@+id/button31" />
+            app:layout_constraintStart_toEndOf="@+id/btnSeven"
+            app:layout_constraintTop_toBottomOf="@+id/btnParenthesesOpen" />
 
         <Button
-            android:id="@+id/button35"
+            android:id="@+id/btnSeven"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button"
-            android:textColor="@color/tanAccent"
-            android:background="@drawable/button_background"
-            app:layout_constraintStart_toEndOf="@+id/button36"
-            app:layout_constraintTop_toBottomOf="@+id/button29" />
-
-        <Button
-            android:id="@+id/button36"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Button"
-            android:textColor="@color/tanAccent"
-            android:background="@drawable/button_background"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button30" />
-
-        <Button
-            android:id="@+id/button37"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Button"
-            android:textColor="@color/tanAccent"
-            android:background="@drawable/button_background"
-            app:layout_constraintStart_toEndOf="@+id/button38"
-            app:layout_constraintTop_toBottomOf="@+id/button33" />
-
-        <Button
-            android:id="@+id/button38"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Button"
-            android:textColor="@color/tanAccent"
-            android:background="@drawable/button_background"
-            app:layout_constraintStart_toEndOf="@+id/button40"
-            app:layout_constraintTop_toBottomOf="@+id/button34" />
-
-        <Button
-            android:id="@+id/button40"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Button"
-            android:textColor="@color/tanAccent"
-            android:background="@drawable/button_background"
-            app:layout_constraintStart_toEndOf="@+id/button39"
-            app:layout_constraintTop_toBottomOf="@+id/button35" />
-
-        <Button
-            android:id="@+id/button39"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Button"
+            android:text="@string/btnSeven"
             android:textColor="@color/tanAccent"
             android:background="@drawable/button_background"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button36" />
+            app:layout_constraintTop_toBottomOf="@+id/btnClear" />
 
         <Button
-            android:id="@+id/button41"
+            android:id="@+id/btnSubtract"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button"
+            android:text="@string/btnSubtract"
             android:textColor="@color/tanAccent"
             android:background="@drawable/button_background"
-            app:layout_constraintStart_toEndOf="@+id/button42"
-            app:layout_constraintTop_toBottomOf="@+id/button37" />
+            app:layout_constraintStart_toEndOf="@+id/btnSix"
+            app:layout_constraintTop_toBottomOf="@+id/btnMultiply" />
 
         <Button
-            android:id="@+id/button42"
+            android:id="@+id/btnSix"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button"
+            android:text="@string/btnSix"
             android:textColor="@color/tanAccent"
             android:background="@drawable/button_background"
-            app:layout_constraintStart_toEndOf="@+id/button43"
-            app:layout_constraintTop_toBottomOf="@+id/button38" />
+            app:layout_constraintStart_toEndOf="@+id/btnFive"
+            app:layout_constraintTop_toBottomOf="@+id/btnNine" />
 
         <Button
-            android:id="@+id/button43"
+            android:id="@+id/btnFive"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button"
+            android:text="@string/btnFive"
             android:textColor="@color/tanAccent"
             android:background="@drawable/button_background"
-            app:layout_constraintStart_toEndOf="@+id/button44"
-            app:layout_constraintTop_toBottomOf="@+id/button40" />
+            app:layout_constraintStart_toEndOf="@+id/btnFour"
+            app:layout_constraintTop_toBottomOf="@+id/btnEight" />
 
         <Button
-            android:id="@+id/button44"
+            android:id="@+id/btnFour"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button"
+            android:text="@string/btnFour"
             android:textColor="@color/tanAccent"
             android:background="@drawable/button_background"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button39" />
+            app:layout_constraintTop_toBottomOf="@+id/btnSeven" />
+
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btnAdd"
+            android:textColor="@color/tanAccent"
+            android:background="@drawable/button_background"
+            app:layout_constraintStart_toEndOf="@+id/btnThree"
+            app:layout_constraintTop_toBottomOf="@+id/btnSubtract" />
+
+        <Button
+            android:id="@+id/btnThree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btnThree"
+            android:textColor="@color/tanAccent"
+            android:background="@drawable/button_background"
+            app:layout_constraintStart_toEndOf="@+id/btnTwo"
+            app:layout_constraintTop_toBottomOf="@+id/btnSix" />
+
+        <Button
+            android:id="@+id/btnTwo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btnTwo"
+            android:textColor="@color/tanAccent"
+            android:background="@drawable/button_background"
+            app:layout_constraintStart_toEndOf="@+id/btnOne"
+            app:layout_constraintTop_toBottomOf="@+id/btnFive" />
+
+        <Button
+            android:id="@+id/btnOne"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btnOne"
+            android:textColor="@color/tanAccent"
+            android:background="@drawable/button_background"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnFour" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

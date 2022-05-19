@@ -15,14 +15,14 @@ public class BasicCalculator extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_basic_calculator);
 
-        btnHome = findViewById(R.id.btnBasicHome);
-        btnHome.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                finish();
-            }
-        });
+//        btnHome = findViewById(R.id.btnBasicHome);
+//        btnHome.setOnClickListener(new View.OnClickListener()
+//        {
+//            @Override
+//            public void onClick(View v)
+//            {
+//                finish();
+//            }
+//        });
     }
 }

@@ -1,14 +1,41 @@
 <resources>
-    <string name="app_name">Calculator</string>
-    <string name="title_activity_main">MainActivity</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
-    <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
+    <string name="btnOne">1</string>
+    <string name="btnTwo">2</string>
+    <string name="btnThree">3</string>
+    <string name="btnFour">4</string>
+    <string name="btnFive">5</string>
+    <string name="btnSix">6</string>
+    <string name="btnSeven">7</string>
+    <string name="btnEight">8</string>
+    <string name="btnNine">9</string>
+    <string name="btnZero">0</string>
 
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="btnClear">C</string>
+    <string name="btnParenthesesOpen">(</string>
+    <string name="btnParenthesesClose">)</string>
+    <string name="btnDivide">÷</string>
+    <string name="btnMultiply">×</string>
+    <string name="btnAdd">+</string>
+    <string name="btnSubtract">-</string>
+    <string name="btnDecimal">.</string>
+    <string name="btnEquals">=</string>
+
+    <string name="btnTrigSin">sin</string>
+    <string name="btnTrigCos">cos</string>
+    <string name="btnTrigTan">tan</string>
+    <string name="btnTrigArcSin">sin<sup><small>-1</small></sup></string>
+    <string name="btnTrigArcCos">cos<sup><small>-1</small></sup></string>
+    <string name="btnTrigArcTan">tan<sup><small>-1</small></sup></string>
+    <string name="btnNaturalLog">ln</string>
+    <string name="btnLog">log</string>
+    <string name="btnSquareRoot">√</string>
+    <string name="btnAbsoluteValue">|x|</string>
+    <string name="btnPi">π</string>
+    <string name="btnE">e</string>
+    <string name="btnXSquared">x<sup><small>2</small></sup></string>
+    <string name="btnXPowerY">x<sup><small>y</small></sup></string>
+    <string name="btnIsPrimeFunction">prime</string>
+
+    <string name="backspace"> </string>
+
 </resources>
