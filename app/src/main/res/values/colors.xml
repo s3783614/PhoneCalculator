@@ -9,6 +9,7 @@
     <color name="white">#FFFFFFFF</color>
 
     <!-- Colors for the background -->
+<!--    TODO: change colour tags-->
     <color name="blackStart">#060607</color>
     <color name="blueBlack">#111f28</color>
     <color name="greyEnd">#484e52</color>

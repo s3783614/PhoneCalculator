@@ -1,4 +1,7 @@
 <resources>
+    <string name ="hint">Enter a Value!</string>
+
+
     <string name="btnOne">1</string>
     <string name="btnTwo">2</string>
     <string name="btnThree">3</string>
