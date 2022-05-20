@@ -21,6 +21,7 @@ public class BasicCalculator extends AppCompatActivity {
         previousCalc = findViewById(R.id.lblPreviousCalculation);
         userInput = findViewById(R.id.txtDisplayText);
 
+
 //        btnHome = findViewById(R.id.btnBasicHome);
 //        btnHome.setOnClickListener(new View.OnClickListener()
 //        {
@@ -34,7 +35,16 @@ public class BasicCalculator extends AppCompatActivity {
 
     public void updateUserInput(String inputToAdd)
     {
-        userInput.setText(inputToAdd);
+//        userInput.setText(inputToAdd);
+        String oldString = userInput.getText().toString();
+
+        int cursorPosition = userInput.getSelectionStart();
+
+        String leftString = oldString.substring(0,cursorPosition);
+        String rightString = oldString.substring(cursorPosition);
+//        "ASH | WIN"
+        userInput.setText(String.format("%s%s%s", leftString, inputToAdd, rightString));
+        userInput.setSelection(cursorPosition+inputToAdd.length());
     }
 
     public void zeroBTN(View view)
