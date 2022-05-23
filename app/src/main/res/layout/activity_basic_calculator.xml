@@ -96,6 +96,7 @@
             android:layout_height="45dp"
             android:background="@drawable/button_background"
             android:contentDescription="@string/backspace"
+            android:onClick="backspaceBTN"
             android:textColor="@color/tanAccent"
             app:layout_constraintEnd_toEndOf="@+id/btnDivide"
             app:layout_constraintStart_toStartOf="@+id/btnDivide"
