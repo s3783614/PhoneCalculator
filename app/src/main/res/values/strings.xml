@@ -41,6 +41,17 @@
     <string name="btnXPowerY">x<sup><small>y</small></sup></string>
     <string name="btnIsPrimeFunction">prime</string>
 
+    <string name = "rdBtnDec">DEC</string>
+    <string name = "rdBtnHex">HEX</string>
+    <string name = "rdBtnBin">BIN</string>
+
+    <string name = "A">A</string>
+    <string name = "B">B</string>
+    <string name = "C">C</string>
+    <string name = "D">D</string>
+    <string name = "E">E</string>
+    <string name = "F">F</string>
+
     <string name="backspace"> </string>
 
 </resources>
