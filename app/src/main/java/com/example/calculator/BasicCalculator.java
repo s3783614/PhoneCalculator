@@ -172,4 +172,73 @@ public class BasicCalculator extends AppCompatActivity {
             userInput.setSelection(cursorPositon-1);
         }
     }
+
+    public void trigSinBTN(View view)
+    {
+
+    }
+
+    public void trigCosBTN(View view)
+    {
+
+    }
+
+    public void trigTanBTN(View view)
+    {
+
+    }
+
+    public void trigArcSinBTN(View view)
+    {
+
+    }
+
+    public void trigArcCosBTN(View view)
+    {
+
+    }
+    public void trigArcTanBTN(View view)
+    {
+
+    }
+    public void naturalLogBTN(View view)
+    {
+
+    }
+    public void logBTN(View view)
+    {
+
+    }
+    public void squareRootBTN(View view)
+    {
+
+    }
+    public void absoluteValueBTN(View view)
+    {
+
+    }
+    public void PiBTN(View view)
+    {
+
+    }
+    public void EBTN(View view)
+    {
+
+    }
+    public void xSquaredBTN(View view)
+    {
+
+    }
+    public void xPowerYBTN(View view)
+    {
+
+    }
+    public void isPrimeFunctionBTN(View view)
+    {
+
+    }
+
+
+
+
 }
