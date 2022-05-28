@@ -147,6 +147,8 @@ public class BasicCalculator extends AppCompatActivity {
     {
         String userExpression = userInput.getText().toString();
 
+        previousCalc.setText(userExpression);
+
         Expression exp = new Expression(userExpression);
         //exp.calculate -> in the MX parser library
         String solution = String.valueOf((exp.calculate()));
@@ -158,6 +160,7 @@ public class BasicCalculator extends AppCompatActivity {
     {
 //        operationChecker = false;
         userInput.setText("");
+        previousCalc.setText("");
     }
     public void backspaceBTN(View view)
     {
@@ -175,66 +178,80 @@ public class BasicCalculator extends AppCompatActivity {
 
     public void trigSinBTN(View view)
     {
-
+        updateUserInput("sin(");
     }
 
     public void trigCosBTN(View view)
     {
+        updateUserInput("cos(");
 
     }
 
     public void trigTanBTN(View view)
     {
+        updateUserInput("tan(");
 
     }
 
     public void trigArcSinBTN(View view)
     {
+        updateUserInput("arcsin(");
 
     }
 
     public void trigArcCosBTN(View view)
     {
+        updateUserInput("arccos(");
 
     }
     public void trigArcTanBTN(View view)
     {
+        updateUserInput("arctan(");
 
     }
     public void naturalLogBTN(View view)
     {
+        updateUserInput("ln(");
 
     }
     public void logBTN(View view)
     {
+        updateUserInput("log(");
 
     }
     public void squareRootBTN(View view)
     {
+        updateUserInput("sqrt(");
 
     }
     public void absoluteValueBTN(View view)
     {
+        updateUserInput("abs(");
 
     }
     public void PiBTN(View view)
     {
+        updateUserInput("pi");
 
     }
     public void EBTN(View view)
     {
+        updateUserInput("e");
 
     }
     public void xSquaredBTN(View view)
     {
+        updateUserInput("^(2)");
 
     }
     public void xPowerYBTN(View view)
     {
+        updateUserInput("^(");
 
     }
     public void isPrimeFunctionBTN(View view)
     {
+        updateUserInput("ispr(");
 
     }
 
