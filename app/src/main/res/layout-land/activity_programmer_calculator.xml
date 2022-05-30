@@ -5,24 +5,113 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/app_background"
-    tools:context=".BasicCalculator">
+    tools:context=".ProgrammerCalculator">
+
+    <Button
+        android:id="@+id/btnProHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Home"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+<!--    <TextView-->
+<!--        android:id="@+id/lblPreviousCalculation"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginEnd="15dp"-->
+<!--        android:layout_marginTop="45dp"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textSize="24sp"-->
+<!--        android:text="placeholder"-->
+
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/txtDisplayText"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginBottom="10dp"-->
+<!--        android:ems="10"-->
+<!--        android:hint="@string/hint"-->
+<!--        android:importantForAutofill="no"-->
+<!--        android:inputType="textPersonName"-->
+<!--        android:paddingStart="20dp"-->
+<!--        android:paddingEnd="20dp"-->
+<!--        android:textAlignment="textEnd"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textColorHint="@color/greyEnd"-->
+<!--        android:textSize="32sp"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/rdbTable"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/lblPreviousCalculation" />-->
+
+    <RadioGroup
+        android:id="@+id/rdbTable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_centerVertical="true"
+
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/secondaryLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <RadioButton
+            android:id="@+id/rdbDec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:checked="true"
+
+            android:text="@string/rdBtnDec"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+
+        <RadioButton
+            android:id="@+id/rdbBinary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+
+            android:text="@string/rdBtnBin"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+
+        <RadioButton
+            android:id="@+id/rdbHex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="@string/rdBtnHex"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </RadioGroup>
+
 
     <TextView
         android:id="@+id/lblPreviousCalculation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="15dp"
+        android:text="placeholder"
         android:textColor="@color/white"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/txtDisplayText"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.7" />
 
     <EditText
         android:id="@+id/txtDisplayText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
         android:ems="10"
         android:hint="@string/hint"
         android:importantForAutofill="no"
@@ -33,7 +122,7 @@
         android:textColor="@color/white"
         android:textColorHint="@color/greyEnd"
         android:textSize="32sp"
-        app:layout_constraintBottom_toTopOf="@+id/secondaryLayout"
+        app:layout_constraintBottom_toTopOf="@+id/rdbTable"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -327,15 +416,16 @@
         android:layout_marginBottom="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/secondaryLayout"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rdbTable">
 
         <Button
             android:id="@+id/btnAND"
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:background="@drawable/button_background"
-            android:onClick="trigSinBTN"
-            android:text="@string/btnTrigSin"
+            android:onClick="btnAND"
+            android:text="@string/btnAND"
             android:textAllCaps="false"
             android:textColor="@color/tanAccent"
             android:textSize="16sp"
@@ -349,8 +439,8 @@
             android:layout_marginStart="10dp"
 
             android:background="@drawable/button_background"
-            android:onClick="trigCosBTN"
-            android:text="@string/btnTrigCos"
+            android:onClick="btnOR"
+            android:text="@string/btnOR"
             android:textAllCaps="false"
             android:textColor="@color/tanAccent"
             android:textSize="16sp"
@@ -363,8 +453,8 @@
             android:layout_height="40dp"
             android:layout_marginStart="10dp"
             android:background="@drawable/button_background"
-            android:onClick="trigTanBTN"
-            android:text="@string/btnTrigTan"
+            android:onClick="btnNegation"
+            android:text="@string/btnNEGATE"
             android:textAllCaps="false"
             android:textColor="@color/tanAccent"
             android:textSize="16sp"
@@ -378,8 +468,8 @@
 
             android:layout_marginTop="10dp"
             android:background="@drawable/button_background"
-            android:onClick="trigArcSinBTN"
-            android:text="@string/btnTrigArcSin"
+            android:onClick="btnNAND"
+            android:text="@string/btnNAND"
             android:textAllCaps="false"
             android:textColor="@color/tanAccent"
             android:textSize="16sp"
@@ -393,8 +483,8 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/button_background"
-            android:onClick="trigArcCosBTN"
-            android:text="@string/btnTrigArcCos"
+            android:onClick="btnNOR"
+            android:text="@string/btnNOR"
             android:textAllCaps="false"
             android:textColor="@color/tanAccent"
             android:textSize="16sp"
@@ -408,8 +498,8 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/button_background"
-            android:onClick="trigArcTanBTN"
-            android:text="@string/btnTrigArcTan"
+            android:onClick="btnXOR"
+            android:text="@string/btnXOR"
             android:textAllCaps="false"
             android:textColor="@color/tanAccent"
             android:textSize="16sp"
@@ -420,11 +510,10 @@
             android:id="@+id/keyA"
             android:layout_width="0dp"
             android:layout_height="40dp"
-
             android:layout_marginTop="10dp"
             android:background="@drawable/button_background"
-            android:onClick="naturalLogBTN"
-            android:text="@string/btnNaturalLog"
+            android:onClick="btnA"
+            android:text="@string/A"
             android:textAllCaps="false"
             android:textColor="@color/tanAccent"
             android:textSize="16sp"
@@ -438,8 +527,8 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/button_background"
-            android:onClick="logBTN"
-            android:text="@string/btnLog"
+            android:onClick="btnB"
+            android:text="@string/B"
             android:textAllCaps="false"
             android:textColor="@color/tanAccent"
             android:textSize="16sp"
@@ -453,8 +542,8 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/button_background"
-            android:onClick="squareRootBTN"
-            android:text="@string/btnSquareRoot"
+            android:onClick="btnC"
+            android:text="@string/C"
             android:textAllCaps="false"
             android:textColor="@color/tanAccent"
             android:textSize="16sp"
@@ -468,8 +557,8 @@
 
             android:layout_marginTop="10dp"
             android:background="@drawable/button_background"
-            android:onClick="absoluteValueBTN"
-            android:text="@string/btnAbsoluteValue"
+            android:onClick="btnD"
+            android:text="@string/D"
             android:textAllCaps="false"
             android:textColor="@color/tanAccent"
             android:textSize="16sp"
@@ -483,8 +572,8 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/button_background"
-            android:onClick="PiBTN"
-            android:text="@string/btnPi"
+            android:onClick="btnE"
+            android:text="@string/E"
             android:textAllCaps="false"
             android:textColor="@color/tanAccent"
             android:textSize="16sp"
@@ -498,58 +587,14 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/button_background"
-            android:onClick="EBTN"
-            android:text="@string/btnE"
+            android:onClick="btnF"
+            android:text="@string/F"
             android:textAllCaps="false"
             android:textColor="@color/tanAccent"
             android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@+id/keyE"
             app:layout_constraintTop_toBottomOf="@+id/keyC" />
 
-        <Button
-            android:id="@+id/button15"
-            android:layout_width="0dp"
-            android:layout_height="40dp"
-
-            android:layout_marginTop="10dp"
-            android:background="@drawable/button_background"
-            android:onClick="xSquaredBTN"
-            android:text="@string/btnXSquared"
-            android:textAllCaps="false"
-            android:textColor="@color/tanAccent"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/keyD" />
-
-        <Button
-            android:id="@+id/btnXPowerY"
-            android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/button_background"
-            android:onClick="xPowerYBTN"
-            android:text="@string/btnXPowerY"
-            android:textAllCaps="false"
-            android:textColor="@color/tanAccent"
-            android:textSize="16sp"
-            app:layout_constraintStart_toEndOf="@+id/button15"
-            app:layout_constraintTop_toBottomOf="@+id/keyE" />
-
-        <Button
-            android:id="@+id/btnIsPrimeFunction"
-            android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/button_background"
-            android:onClick="isPrimeFunctionBTN"
-            android:text="@string/btnIsPrimeFunction"
-            android:textAllCaps="false"
-            android:textColor="@color/tanAccent"
-            android:textSize="16sp"
-            app:layout_constraintStart_toEndOf="@+id/btnXPowerY"
-            app:layout_constraintTop_toBottomOf="@+id/keyF" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

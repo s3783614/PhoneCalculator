@@ -52,6 +52,14 @@
     <string name = "E">E</string>
     <string name = "F">F</string>
 
+    <string name = "btnAND">AND</string>
+    <string name = "btnOR">OR</string>
+    <string name = "btnNAND">NAND</string>
+    <string name = "btnXOR">XOR</string>
+    <string name = "btnNOR">NOR</string>
+    <string name = "btnNEGATE">~</string>
+
+
     <string name="backspace"> </string>
 
 </resources>

@@ -47,6 +47,10 @@ public class ProgrammerCalculator extends AppCompatActivity {
 
     private DataState state = new DataState();
 
+    private boolean notOperationChecker = false;
+    private boolean operationChecker = false;
+    private boolean  isOperationChecker = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,6 +83,10 @@ public class ProgrammerCalculator extends AppCompatActivity {
 
     private void findRadioButton(int checkID)
     {
+        int cursorPosition = userInput.getSelectionStart();
+        String leftString;
+        String operator;
+        String rightString;
 
         switch (checkID)
         {
@@ -100,9 +108,97 @@ public class ProgrammerCalculator extends AppCompatActivity {
                     else
                     {
                         String s = userInput.getText().toString();
-                        int binaryConvertor = Integer.parseInt(s);
 
-                        userInput.setText(Integer.toBinaryString(binaryConvertor));
+                        for(int i = 0; i < s.length();i++)
+                        {
+                            System.out.println(s.charAt(i));
+                            if (s.charAt(i) == '@')
+                            {
+                                leftString = s.substring(0, i);
+                                operator = s.substring(i, i+2);
+                                rightString = s.substring(i+2);
+
+                                System.out.println("leftS: "+leftString);
+                                System.out.println("oper: "+ operator);
+                                System.out.println("rs: "+rightString);
+
+                                int leftDecimalValue = Integer.parseInt(leftString);
+                                int rightDecimalValue = Integer.parseInt(rightString);
+                                userInput.setText(Integer.toBinaryString(leftDecimalValue)+operator+Integer.toBinaryString(rightDecimalValue));
+                                userInput.setSelection(userInput.getText().length());
+
+
+                            }
+                            if (s.charAt(i) == '×')
+                            {
+                                leftString = s.substring(0, i);
+                                operator = s.substring(i, i+1);
+                                rightString = s.substring(i+1);
+
+                                System.out.println("leftS: "+leftString);
+                                System.out.println("oper: "+ operator);
+                                System.out.println("rs: "+rightString);
+
+                                int leftDecimalValue = Integer.parseInt(leftString);
+                                int rightDecimalValue = Integer.parseInt(rightString);
+                                userInput.setText(Integer.toBinaryString(leftDecimalValue)+operator+Integer.toBinaryString(rightDecimalValue));
+                                userInput.setSelection(userInput.getText().length());
+
+
+                            }
+                            if (s.charAt(i) == '÷')
+                            {
+                                leftString = s.substring(0, i);
+                                operator = s.substring(i, i+1);
+                                rightString = s.substring(i+1);
+
+                                System.out.println("leftS: "+leftString);
+                                System.out.println("oper: "+ operator);
+                                System.out.println("rs: "+rightString);
+
+                                int leftDecimalValue = Integer.parseInt(leftString);
+                                int rightDecimalValue = Integer.parseInt(rightString);
+                                userInput.setText(Integer.toBinaryString(leftDecimalValue)+operator+Integer.toBinaryString(rightDecimalValue));
+                                userInput.setSelection(userInput.getText().length());
+
+                            }
+                            if (s.charAt(i) == '-')
+                            {
+                                leftString = s.substring(0, i);
+                                operator = s.substring(i, i+1);
+                                rightString = s.substring(i+1);
+
+                                System.out.println("leftS: "+leftString);
+                                System.out.println("oper: "+ operator);
+                                System.out.println("rs: "+rightString);
+
+                                int leftDecimalValue = Integer.parseInt(leftString);
+                                int rightDecimalValue = Integer.parseInt(rightString);
+                                userInput.setText(Integer.toBinaryString(leftDecimalValue)+operator+Integer.toBinaryString(rightDecimalValue));
+                                userInput.setSelection(userInput.getText().length());
+
+                            }
+                            if (s.charAt(i) == '+')
+                            {
+                                leftString = s.substring(0, i);
+                                operator = s.substring(i, i+1);
+                                rightString = s.substring(i+1);
+
+                                System.out.println("leftS: "+leftString);
+                                System.out.println("oper: "+ operator);
+                                System.out.println("rs: "+rightString);
+
+                                int leftDecimalValue = Integer.parseInt(leftString);
+                                int rightDecimalValue = (Integer.parseInt(rightString));
+
+                                userInput.setText(Integer.toBinaryString(leftDecimalValue)+operator+Integer.toBinaryString(rightDecimalValue));
+                                userInput.setSelection(userInput.getText().length());
+                            }
+                        }
+
+//                        int binaryConvertor = Integer.parseInt(s);
+                        //userinput.setText(Integer.toBinaryString(binaryString))
+
                     }
 
                     state.setPreviousDataState(binary);
@@ -120,10 +216,105 @@ public class ProgrammerCalculator extends AppCompatActivity {
 
                         // HEX TO DECIMAL
                         String s = userInput.getText().toString();
-                        int dcml = Integer.parseInt(s,16);
 
-                        // DECIMAL TO BINARY
-                        userInput.setText(Integer.toBinaryString(dcml));
+                        for(int i = 0; i < s.length();i++)
+                        {
+                            System.out.println(s.charAt(i));
+                            if (s.charAt(i) == '@')
+                            {
+                                leftString = s.substring(0, i);
+                                operator = s.substring(i, i+2);
+                                rightString = s.substring(i+2);
+
+                                System.out.println("leftS: "+leftString);
+                                System.out.println("oper: "+ operator);
+                                System.out.println("rs: "+rightString);
+
+                                int leftDecimalValue = Integer.parseInt(leftString,16);
+                                int rightDecimalValue = Integer.parseInt(rightString,16);
+
+                                userInput.setText(Integer.toBinaryString(leftDecimalValue)+operator+Integer.toBinaryString(rightDecimalValue));
+                                userInput.setSelection(userInput.getText().length());
+
+
+                            }
+                            if (s.charAt(i) == '×')
+                            {
+                                leftString = s.substring(0, i);
+                                operator = s.substring(i, i+1);
+                                rightString = s.substring(i+1);
+
+                                System.out.println("leftS: "+leftString);
+                                System.out.println("oper: "+ operator);
+                                System.out.println("rs: "+rightString);
+
+                                int leftDecimalValue = Integer.parseInt(leftString,16);
+                                int rightDecimalValue = Integer.parseInt(rightString,16);
+
+                                userInput.setText(Integer.toBinaryString(leftDecimalValue)+operator+Integer.toBinaryString(rightDecimalValue));
+                                userInput.setSelection(userInput.getText().length());
+
+
+                            }
+                            if (s.charAt(i) == '÷')
+                            {
+                                leftString = s.substring(0, i);
+                                operator = s.substring(i, i+1);
+                                rightString = s.substring(i+1);
+
+                                System.out.println("leftS: "+leftString);
+                                System.out.println("oper: "+ operator);
+                                System.out.println("rs: "+rightString);
+
+                                int leftDecimalValue = Integer.parseInt(leftString,16);
+                                int rightDecimalValue = Integer.parseInt(rightString,16);
+
+                                userInput.setText(Integer.toBinaryString(leftDecimalValue)+operator+Integer.toBinaryString(rightDecimalValue));
+                                userInput.setSelection(userInput.getText().length());
+
+                            }
+                            if (s.charAt(i) == '-')
+                            {
+                                leftString = s.substring(0, i);
+                                operator = s.substring(i, i+1);
+                                rightString = s.substring(i+1);
+
+                                System.out.println("leftS: "+leftString);
+                                System.out.println("oper: "+ operator);
+                                System.out.println("rs: "+rightString);
+
+                                int leftDecimalValue = Integer.parseInt(leftString,16);
+                                int rightDecimalValue = Integer.parseInt(rightString,16);
+
+                                userInput.setText(Integer.toBinaryString(leftDecimalValue)+operator+Integer.toBinaryString(rightDecimalValue));
+                                userInput.setSelection(userInput.getText().length());
+
+                            }
+                            if (s.charAt(i) == '+')
+                            {
+                                leftString = s.substring(0, i);
+                                operator = s.substring(i, i+1);
+                                rightString = s.substring(i+1);
+
+                                System.out.println("leftS: "+leftString);
+                                System.out.println("oper: "+ operator);
+                                System.out.println("rs: "+rightString);
+
+                                int leftDecimalValue = Integer.parseInt(leftString,16);
+                                int rightDecimalValue = (Integer.parseInt(rightString,16));
+
+                                userInput.setText(Integer.toBinaryString(leftDecimalValue)+operator+Integer.toBinaryString(rightDecimalValue));
+                                userInput.setSelection(userInput.getText().length());
+                            }
+                        }
+
+
+//                        int dcml = Integer.parseInt(s,16);
+//
+//                        // DECIMAL TO BINARY
+//                        userInput.setText(Integer.toBinaryString(dcml));
+//                        userInput.setSelection(userInput.getText().length());
+
                     }
 
 
@@ -146,8 +337,106 @@ public class ProgrammerCalculator extends AppCompatActivity {
                     else
                     {
                         String s = String.valueOf(userInput.getText());
-                        int dcml = Integer.parseInt(s,2);
-                        userInput.setText(Integer.toString(dcml));
+
+                        for(int i = 0; i < s.length();i++)
+                        {
+                            System.out.println(s.charAt(i));
+                            if (s.charAt(i) == '@')
+                            {
+                                leftString = s.substring(0, i);
+                                operator = s.substring(i, i+2);
+                                rightString = s.substring(i+2);
+
+                                System.out.println("leftS: "+leftString);
+                                System.out.println("oper: "+ operator);
+                                System.out.println("rs: "+rightString);
+
+                                int leftDecimalValue = Integer.parseInt(leftString,2);
+                                int rightDecimalValue = (Integer.parseInt(rightString,2));
+
+                                userInput.setText(Integer.toString(leftDecimalValue)+operator+Integer.toString(rightDecimalValue));
+                                userInput.setSelection(userInput.getText().length());
+
+
+                            }
+                            if (s.charAt(i) == '×')
+                            {
+                                leftString = s.substring(0, i);
+                                operator = s.substring(i, i+1);
+                                rightString = s.substring(i+1);
+
+                                System.out.println("leftS: "+leftString);
+                                System.out.println("oper: "+ operator);
+                                System.out.println("rs: "+rightString);
+
+                                int leftDecimalValue = Integer.parseInt(leftString,2);
+                                int rightDecimalValue = (Integer.parseInt(rightString,2));
+
+                                userInput.setText(Integer.toString(leftDecimalValue)+operator+Integer.toString(rightDecimalValue));
+                                userInput.setSelection(userInput.getText().length());
+
+
+                            }
+                            if (s.charAt(i) == '÷')
+                            {
+                                leftString = s.substring(0, i);
+                                operator = s.substring(i, i+1);
+                                rightString = s.substring(i+1);
+
+                                System.out.println("leftS: "+leftString);
+                                System.out.println("oper: "+ operator);
+                                System.out.println("rs: "+rightString);
+
+                                int leftDecimalValue = Integer.parseInt(leftString,2);
+                                int rightDecimalValue = (Integer.parseInt(rightString,2));
+
+                                userInput.setText(Integer.toString(leftDecimalValue)+operator+Integer.toString(rightDecimalValue));
+                                userInput.setSelection(userInput.getText().length());
+
+                            }
+                            if (s.charAt(i) == '-')
+                            {
+                                leftString = s.substring(0, i);
+                                operator = s.substring(i, i+1);
+                                rightString = s.substring(i+1);
+
+                                System.out.println("leftS: "+leftString);
+                                System.out.println("oper: "+ operator);
+                                System.out.println("rs: "+rightString);
+
+                                int leftDecimalValue = Integer.parseInt(leftString,2);
+                                int rightDecimalValue = (Integer.parseInt(rightString,2));
+
+                                userInput.setText(Integer.toString(leftDecimalValue)+operator+Integer.toString(rightDecimalValue));
+                                userInput.setSelection(userInput.getText().length());
+
+                            }
+                            if (s.charAt(i) == '+')
+                            {
+                                leftString = s.substring(0, i);
+                                operator = s.substring(i, i+1);
+                                rightString = s.substring(i+1);
+
+                                System.out.println("leftS: "+leftString);
+                                System.out.println("oper: "+ operator);
+                                System.out.println("rs: "+rightString);
+
+                                int leftDecimalValue = Integer.parseInt(leftString,2);
+                                int rightDecimalValue = (Integer.parseInt(rightString,2));
+
+                                userInput.setText(Integer.toString(leftDecimalValue)+operator+Integer.toString(rightDecimalValue));
+                                userInput.setSelection(userInput.getText().length());
+                            }
+                        }
+
+
+
+
+
+//                        int dcml = Integer.parseInt(s,2);
+//                        userInput.setText(Integer.toString(dcml));
+//                        userInput.setSelection(userInput.getText().length());
+
                     }
 
                     state.setPreviousDataState(decimal);
@@ -163,8 +452,103 @@ public class ProgrammerCalculator extends AppCompatActivity {
                     else
                     {
                         String s = userInput.getText().toString();
-                        int dcml = Integer.parseInt(s,16);
-                        userInput.setText(Integer.toString(dcml));
+
+                        for(int i = 0; i < s.length();i++)
+                        {
+                            System.out.println(s.charAt(i));
+                            if (s.charAt(i) == '@')
+                            {
+                                leftString = s.substring(0, i);
+                                operator = s.substring(i, i+2);
+                                rightString = s.substring(i+2);
+
+                                System.out.println("leftS: "+leftString);
+                                System.out.println("oper: "+ operator);
+                                System.out.println("rs: "+rightString);
+
+                                int leftDecimalValue = Integer.parseInt(leftString,16);
+                                int rightDecimalValue = (Integer.parseInt(rightString,16));
+
+                                userInput.setText(Integer.toString(leftDecimalValue)+operator+Integer.toString(rightDecimalValue));
+                                userInput.setSelection(userInput.getText().length());
+
+
+                            }
+                            if (s.charAt(i) == '×')
+                            {
+                                leftString = s.substring(0, i);
+                                operator = s.substring(i, i+1);
+                                rightString = s.substring(i+1);
+
+                                System.out.println("leftS: "+leftString);
+                                System.out.println("oper: "+ operator);
+                                System.out.println("rs: "+rightString);
+
+                                int leftDecimalValue = Integer.parseInt(leftString,16);
+                                int rightDecimalValue = (Integer.parseInt(rightString,16));
+
+                                userInput.setText(Integer.toString(leftDecimalValue)+operator+Integer.toString(rightDecimalValue));
+                                userInput.setSelection(userInput.getText().length());
+
+
+                            }
+                            if (s.charAt(i) == '÷')
+                            {
+                                leftString = s.substring(0, i);
+                                operator = s.substring(i, i+1);
+                                rightString = s.substring(i+1);
+
+                                System.out.println("leftS: "+leftString);
+                                System.out.println("oper: "+ operator);
+                                System.out.println("rs: "+rightString);
+
+                                int leftDecimalValue = Integer.parseInt(leftString,16);
+                                int rightDecimalValue = (Integer.parseInt(rightString,16));
+
+                                userInput.setText(Integer.toString(leftDecimalValue)+operator+Integer.toString(rightDecimalValue));
+                                userInput.setSelection(userInput.getText().length());
+
+                            }
+                            if (s.charAt(i) == '-')
+                            {
+                                leftString = s.substring(0, i);
+                                operator = s.substring(i, i+1);
+                                rightString = s.substring(i+1);
+
+                                System.out.println("leftS: "+leftString);
+                                System.out.println("oper: "+ operator);
+                                System.out.println("rs: "+rightString);
+
+                                int leftDecimalValue = Integer.parseInt(leftString,16);
+                                int rightDecimalValue = (Integer.parseInt(rightString,16));
+
+                                userInput.setText(Integer.toString(leftDecimalValue)+operator+Integer.toString(rightDecimalValue));
+                                userInput.setSelection(userInput.getText().length());
+
+                            }
+                            if (s.charAt(i) == '+')
+                            {
+                                leftString = s.substring(0, i);
+                                operator = s.substring(i, i+1);
+                                rightString = s.substring(i+1);
+
+                                System.out.println("leftS: "+leftString);
+                                System.out.println("oper: "+ operator);
+                                System.out.println("rs: "+rightString);
+
+                                int leftDecimalValue = Integer.parseInt(leftString,16);
+                                int rightDecimalValue = (Integer.parseInt(rightString,16));
+
+                                userInput.setText(Integer.toString(leftDecimalValue)+operator+Integer.toString(rightDecimalValue));
+                                userInput.setSelection(userInput.getText().length());
+                            }
+                        }
+
+
+//                        int dcml = Integer.parseInt(s,16);
+//                        userInput.setText(Integer.toString(dcml));
+//                        userInput.setSelection(userInput.getText().length());
+
                     }
 
                     state.setPreviousDataState(decimal);
@@ -186,9 +570,108 @@ public class ProgrammerCalculator extends AppCompatActivity {
                     }
                     else
                     {
-                        int num = Integer.parseInt(String.valueOf(userInput.getText()),2);
-                        String s = Integer.toHexString(num);
-                        userInput.setText(s.toUpperCase());
+                        String s = userInput.getText().toString();
+
+                        for(int i = 0; i < s.length();i++)
+                        {
+                            System.out.println(s.charAt(i));
+                            if (s.charAt(i) == '@')
+                            {
+                                leftString = s.substring(0, i);
+                                operator = s.substring(i, i+2);
+                                rightString = s.substring(i+2);
+
+                                System.out.println("leftS: "+leftString);
+                                System.out.println("oper: "+ operator);
+                                System.out.println("rs: "+rightString);
+
+                                int leftDecimalValue = Integer.parseInt(leftString,2);
+                                int rightDecimalValue = (Integer.parseInt(rightString,2));
+
+                                userInput.setText(Integer.toHexString(leftDecimalValue).toUpperCase()+operator+Integer.toHexString(rightDecimalValue).toUpperCase());
+                                userInput.setSelection(userInput.getText().length());
+
+
+                            }
+                            if (s.charAt(i) == '×')
+                            {
+                                leftString = s.substring(0, i);
+                                operator = s.substring(i, i+1);
+                                rightString = s.substring(i+1);
+
+                                System.out.println("leftS: "+leftString);
+                                System.out.println("oper: "+ operator);
+                                System.out.println("rs: "+rightString);
+
+                                int leftDecimalValue = Integer.parseInt(leftString,2);
+                                int rightDecimalValue = (Integer.parseInt(rightString,2));
+
+                                userInput.setText(Integer.toHexString(leftDecimalValue).toUpperCase()+operator+Integer.toHexString(rightDecimalValue).toUpperCase());
+                                userInput.setSelection(userInput.getText().length());
+
+
+                            }
+                            if (s.charAt(i) == '÷')
+                            {
+                                leftString = s.substring(0, i);
+                                operator = s.substring(i, i+1);
+                                rightString = s.substring(i+1);
+
+                                System.out.println("leftS: "+leftString);
+                                System.out.println("oper: "+ operator);
+                                System.out.println("rs: "+rightString);
+
+                                int leftDecimalValue = Integer.parseInt(leftString,2);
+                                int rightDecimalValue = (Integer.parseInt(rightString,2));
+
+                                userInput.setText(Integer.toHexString(leftDecimalValue).toUpperCase()+operator+Integer.toHexString(rightDecimalValue).toUpperCase());
+                                userInput.setSelection(userInput.getText().length());
+
+                            }
+                            if (s.charAt(i) == '-')
+                            {
+                                leftString = s.substring(0, i);
+                                operator = s.substring(i, i+1);
+                                rightString = s.substring(i+1);
+
+                                System.out.println("leftS: "+leftString);
+                                System.out.println("oper: "+ operator);
+                                System.out.println("rs: "+rightString);
+
+                                int leftDecimalValue = Integer.parseInt(leftString,2);
+                                int rightDecimalValue = (Integer.parseInt(rightString,2));
+
+                                userInput.setText(Integer.toHexString(leftDecimalValue).toUpperCase()+operator+Integer.toHexString(rightDecimalValue).toUpperCase());
+                                userInput.setSelection(userInput.getText().length());
+
+                            }
+                            if (s.charAt(i) == '+')
+                            {
+                                leftString = s.substring(0, i);
+                                operator = s.substring(i, i+1);
+                                rightString = s.substring(i+1);
+
+                                System.out.println("leftS: "+leftString);
+                                System.out.println("oper: "+ operator);
+                                System.out.println("rs: "+rightString);
+
+                                int leftDecimalValue = Integer.parseInt(leftString,2);
+                                int rightDecimalValue = (Integer.parseInt(rightString,2));
+
+                                userInput.setText(Integer.toHexString(leftDecimalValue).toUpperCase()+operator+Integer.toHexString(rightDecimalValue).toUpperCase());
+                                userInput.setSelection(userInput.getText().length());
+                            }
+                        }
+
+
+//                        int num = Integer.parseInt(String.valueOf(userInput.getText()),2);
+
+
+
+//                        String s = Integer.toHexString(num);
+//                        userInput.setText(s.toUpperCase());
+//                        userInput.setSelection(userInput.getText().length());
+
                     }
 
 
@@ -205,9 +688,105 @@ public class ProgrammerCalculator extends AppCompatActivity {
                     }
                     else
                     {
+                        String s = userInput.getText().toString();
 
-                        int s = Integer.parseInt(String.valueOf(userInput.getText()));
-                        userInput.setText(Integer.toHexString(s).toUpperCase());
+                        for(int i = 0; i < s.length();i++)
+                        {
+                            System.out.println(s.charAt(i));
+                            if (s.charAt(i) == '@')
+                            {
+                                leftString = s.substring(0, i);
+                                operator = s.substring(i, i+2);
+                                rightString = s.substring(i+2);
+
+                                System.out.println("leftS: "+leftString);
+                                System.out.println("oper: "+ operator);
+                                System.out.println("rs: "+rightString);
+
+                                int leftDecimalValue = Integer.parseInt(leftString);
+                                int rightDecimalValue = (Integer.parseInt(rightString));
+
+                                userInput.setText(Integer.toHexString(leftDecimalValue).toUpperCase()+operator+Integer.toHexString(rightDecimalValue).toUpperCase());
+                                userInput.setSelection(userInput.getText().length());
+
+
+                            }
+                            if (s.charAt(i) == '×')
+                            {
+                                leftString = s.substring(0, i);
+                                operator = s.substring(i, i+1);
+                                rightString = s.substring(i+1);
+
+                                System.out.println("leftS: "+leftString);
+                                System.out.println("oper: "+ operator);
+                                System.out.println("rs: "+rightString);
+
+                                int leftDecimalValue = Integer.parseInt(leftString);
+                                int rightDecimalValue = (Integer.parseInt(rightString));
+
+                                userInput.setText(Integer.toHexString(leftDecimalValue).toUpperCase()+operator+Integer.toHexString(rightDecimalValue).toUpperCase());
+                                userInput.setSelection(userInput.getText().length());
+
+                            }
+                            if (s.charAt(i) == '÷')
+                            {
+                                leftString = s.substring(0, i);
+                                operator = s.substring(i, i+1);
+                                rightString = s.substring(i+1);
+
+                                System.out.println("leftS: "+leftString);
+                                System.out.println("oper: "+ operator);
+                                System.out.println("rs: "+rightString);
+
+                                int leftDecimalValue = Integer.parseInt(leftString);
+                                int rightDecimalValue = (Integer.parseInt(rightString));
+
+                                userInput.setText(Integer.toHexString(leftDecimalValue).toUpperCase()+operator+Integer.toHexString(rightDecimalValue).toUpperCase());
+                                userInput.setSelection(userInput.getText().length());
+
+                            }
+                            if (s.charAt(i) == '-')
+                            {
+                                leftString = s.substring(0, i);
+                                operator = s.substring(i, i+1);
+                                rightString = s.substring(i+1);
+
+                                System.out.println("leftS: "+leftString);
+                                System.out.println("oper: "+ operator);
+                                System.out.println("rs: "+rightString);
+
+                                int leftDecimalValue = Integer.parseInt(leftString);
+                                int rightDecimalValue = (Integer.parseInt(rightString));
+
+                                userInput.setText(Integer.toHexString(leftDecimalValue).toUpperCase()+operator+Integer.toHexString(rightDecimalValue).toUpperCase());
+                                userInput.setSelection(userInput.getText().length());
+
+                            }
+                            if (s.charAt(i) == '+')
+                            {
+                                leftString = s.substring(0, i);
+                                operator = s.substring(i, i+1);
+                                rightString = s.substring(i+1);
+
+                                System.out.println("leftS: "+leftString);
+                                System.out.println("oper: "+ operator);
+                                System.out.println("rs: "+rightString);
+
+                                int leftDecimalValue = Integer.parseInt(leftString);
+                                int rightDecimalValue = (Integer.parseInt(rightString));
+
+                                userInput.setText(Integer.toHexString(leftDecimalValue).toUpperCase()+operator+Integer.toHexString(rightDecimalValue).toUpperCase());
+                                userInput.setSelection(userInput.getText().length());
+                            }
+                        }
+
+
+
+
+//                        int s = Integer.parseInt(String.valueOf(userInput.getText()));
+//                        userInput.setText(Integer.toHexString(s).toUpperCase());
+//                        userInput.setSelection(userInput.getText().length());
+
                     }
 
 
@@ -346,99 +925,270 @@ public class ProgrammerCalculator extends AppCompatActivity {
         String leftString = oldString.substring(0,cursorPosition);
         String rightString = oldString.substring(cursorPosition);
 //        "ASH | WIN"
-//        if(!operationChecker)
-//        {
-        userInput.setText(String.format("%s%s%s", leftString, inputToAdd, rightString));
-        userInput.setSelection(cursorPosition+inputToAdd.length());
-//        }
+        if(!operationChecker)
+        {
+            userInput.setText(String.format("%s%s%s", leftString, inputToAdd, rightString));
+            userInput.setSelection(cursorPosition+inputToAdd.length());
+        }
     }
 
     public void zeroBTN(View view)
     {
-//        operationChecker = false;
+        operationChecker = false;
         updateUserInput(getResources().getString(R.string.btnZero));
+        if(isOperationChecker)
+        {
+            operationChecker = true;
+        }
+
     }
 
     public void oneBTN(View view)
     {
-//        operationChecker = false;
+        operationChecker = false;
         updateUserInput(getResources().getString(R.string.btnOne));
+        if(isOperationChecker)
+        {
+            operationChecker = true;
+        }
     }
 
     public void twoBTN(View view)
     {
-//        operationChecker = false;
+        operationChecker = false;
         updateUserInput(getResources().getString(R.string.btnTwo));
+        if(isOperationChecker)
+        {
+            operationChecker = true;
+        }
     }
     public void threeBTN(View view)
     {
-//        operationChecker = false;
+        operationChecker = false;
         updateUserInput(getResources().getString(R.string.btnThree));
+        if(isOperationChecker)
+        {
+            operationChecker = true;
+        }
     }
     public void fourBTN(View view)
     {
-//        operationChecker = false;
+        operationChecker = false;
         updateUserInput(getResources().getString(R.string.btnFour));
+        if(isOperationChecker)
+        {
+            operationChecker = true;
+        }
     }
     public void fiveBTN(View view)
     {
-//        operationChecker = false;
+        operationChecker = false;
         updateUserInput(getResources().getString(R.string.btnFive));
+        if(isOperationChecker)
+        {
+            operationChecker = true;
+        }
     }
     public void sixBTN(View view)
     {
-//        operationChecker = false;
+        operationChecker = false;
         updateUserInput(getResources().getString(R.string.btnSix));
+        if(isOperationChecker)
+        {
+            operationChecker = true;
+        }
     }
     public void sevenBTN(View view)
     {
-//        operationChecker = false;
+        operationChecker = false;
         updateUserInput(getResources().getString(R.string.btnSeven));
+        if(isOperationChecker)
+        {
+            operationChecker = true;
+        }
     }
     public void eightBTN(View view)
     {
-//        operationChecker = false;
+        operationChecker = false;
         updateUserInput(getResources().getString(R.string.btnEight));
+        if(isOperationChecker)
+        {
+            operationChecker = true;
+        }
     }
     public void nineBTN(View view)
     {
-//        operationChecker = false;
+        operationChecker = false;
         updateUserInput(getResources().getString(R.string.btnNine));
+        if(isOperationChecker)
+        {
+            operationChecker = true;
+        }
     }
     public void parenthesesOpenBTN(View view)
     {
-//        operationChecker = false;
+        operationChecker = false;
         updateUserInput(getResources().getString(R.string.btnParenthesesOpen));
+        if(isOperationChecker)
+        {
+            operationChecker = true;
+        }
+
     }
     public void parenthesesCloseBTN(View view)
     {
-//        operationChecker = false;
+        operationChecker = false;
         updateUserInput(getResources().getString(R.string.btnParenthesesClose));
+        if(isOperationChecker)
+        {
+            operationChecker = true;
+        }
     }
     public void divideBTN(View view)
     {
         updateUserInput(getResources().getString(R.string.btnDivide));
-//        operationChecker = true;
+        operationChecker = true;
+        isOperationChecker = true;
+
     }
     public void multiplyBTN(View view)
     {
         updateUserInput(getResources().getString(R.string.btnMultiply));
-//        operationChecker = true;
+        operationChecker = true;
+        isOperationChecker = true;
+
     }
     public void subtractBTN(View view)
     {
         updateUserInput(getResources().getString(R.string.btnSubtract));
-//        operationChecker = true;
+        operationChecker = true;
+        isOperationChecker = true;
+
+
     }
     public void addBTN(View view)
     {
         updateUserInput(getResources().getString(R.string.btnAdd));
-//        operationChecker = true;
+        operationChecker = true;
+        isOperationChecker = true;
     }
     public void decimalBTN(View view)
     {
         updateUserInput(getResources().getString(R.string.btnDecimal));
 //        operationChecker = true;
+    }
+
+    public void btnA(View view)
+    {
+        operationChecker = false;
+        updateUserInput(getResources().getString(R.string.A));
+        if(isOperationChecker)
+        {
+            operationChecker = true;
+        }
+    }
+
+    public void btnB(View view)
+    {
+        operationChecker = false;
+        updateUserInput(getResources().getString(R.string.B));
+        if(isOperationChecker)
+        {
+            operationChecker = true;
+        }
+    }
+
+    public void btnC(View view)
+    {
+        operationChecker = false;
+        updateUserInput(getResources().getString(R.string.C));
+        if(isOperationChecker)
+        {
+            operationChecker = true;
+        }
+    }
+
+    public void btnD(View view)
+    {
+        operationChecker = false;
+        updateUserInput(getResources().getString(R.string.D));
+        if(isOperationChecker)
+        {
+            operationChecker = true;
+        }
+    }
+
+    public void btnE(View view)
+    {
+        operationChecker = false;
+        updateUserInput(getResources().getString(R.string.E));
+        if(isOperationChecker)
+        {
+            operationChecker = true;
+        }
+    }
+
+    public void btnF(View view)
+    {
+        operationChecker = false;
+        updateUserInput(getResources().getString(R.string.F));
+        if(isOperationChecker)
+        {
+            operationChecker = true;
+        }
+    }
+
+    public void btnAND(View view)
+    {
+        updateUserInput("@&");
+        operationChecker = true;
+        isOperationChecker = true;
+    }
+
+    public void btnOR(View view)
+    {
+        updateUserInput("@|");
+        operationChecker = true;
+        isOperationChecker = true;
+
+
+    }
+
+    public void btnNAND(View view)
+    {
+        notOperationChecker=true;
+        updateUserInput("@&");
+        operationChecker = true;
+        isOperationChecker = true;
+
+
+    }
+
+    public void btnNOR(View view)
+    {
+        notOperationChecker=true;
+        updateUserInput("@|");
+        operationChecker = true;
+        isOperationChecker = true;
+
+
+    }
+
+    public void btnXOR(View view)
+    {
+        updateUserInput("@^");
+        operationChecker = true;
+        isOperationChecker = true;
+
+
+    }
+
+    public void btnNegation(View view)
+    {
+        updateUserInput("@~");
+        operationChecker = true;
+        isOperationChecker = true;
+
     }
 
     public void equalsBTN(View view)
@@ -447,52 +1197,267 @@ public class ProgrammerCalculator extends AppCompatActivity {
 
         previousCalc.setText(userExpression);
 
+        userExpression = convertTo(userExpression);
+
+
         Expression exp = new Expression(userExpression);
         //exp.calculate -> in the MX parser library
-        String solution = String.valueOf((exp.calculate()));
+        if(!notOperationChecker)
+        {
+            String solution = String.valueOf((exp.calculate()));
+            solution = convertBack(solution);
+            userInput.setText(solution);
+            userInput.setSelection(userInput.getText().length());
+            operationChecker = false;
+            isOperationChecker = false;
+        }
+        else {
+            // AND COMPLETE
+            String solution = String.valueOf((exp.calculate()));
 
-        userInput.setText(solution);
-        userInput.setSelection(userInput.getText().length());
+            //TO NEGATE THE SOLUTION SO WE GET NOR  or NAND
+            String s = "@~" + solution;
+            Expression newExp = new Expression(s);
+            solution = String.valueOf((newExp.calculate()));
+            solution = convertBack(solution);
+            userInput.setText(solution);
+            userInput.setSelection(userInput.getText().length());
+
+            notOperationChecker = false;
+            operationChecker = false;
+            isOperationChecker = false;
+
+        }
+
+
     }
 
-    public void btnA(View view)
+
+    public String convertBack(String userExpression)
     {
-        updateUserInput(getResources().getString(R.string.A));
+        System.out.println("convertback UserExpression = " +userExpression);
+        switch (state.getCurrentDataState()) {
+            case binary:
+                for (int i = 0; i < userExpression.length(); i++) {
+                    if (userExpression.charAt(i) == '.') {
+                        String s = userExpression.substring(0, i);
+                        return Integer.toBinaryString(Integer.parseInt(s));
 
+                    }
+                }
+
+                break;
+            case HEX:
+                for (int i = 0; i < userExpression.length(); i++) {
+                    if (userExpression.charAt(i) == '.') {
+                        String s = userExpression.substring(0, i);
+                        return Integer.toHexString(Integer.parseInt(s)).toUpperCase();
+
+                    }
+                }
+                break;
+            case decimal:
+                for (int i = 0; i < userExpression.length(); i++) {
+                    if (userExpression.charAt(i) == '.') {
+                        return userExpression.substring(0, i);
+
+                    }
+                }
+                break;
+        }
+        return null;
     }
 
-    public void btnB(View view)
+    public String convertTo(String userExpression)
     {
-        updateUserInput(getResources().getString(R.string.B));
+        System.out.println("convertTo : " +userExpression);
+        if (state.getCurrentDataState().equals(binary))
+        {
+            String leftString;
+            String operator;
+            String rightString;
+            for (int i = 0; i < userExpression.length(); i++)
+            {
+                if (userExpression.charAt(i) == '@')
+                {
+                    leftString = userExpression.substring(0, i);
+                    operator = userExpression.substring(i, i+2);
+                    rightString = userExpression.substring(i+2);
 
+                    System.out.println("!!!BINARY WE HERE IN BINARY!!!");
+                    System.out.println("leftS: "+leftString);
+                    System.out.println("oper: "+ operator);
+                    System.out.println("rs: "+rightString);
+
+                    int leftDecimalValue = Integer.parseInt(leftString,2);
+                    int rightDecimalValue = Integer.parseInt(rightString,2);
+
+                    return leftDecimalValue+operator+rightDecimalValue;
+
+                }
+                else if (userExpression.charAt(i) == '×')
+                {
+                    leftString = userExpression.substring(0, i);
+                    operator = userExpression.substring(i, i+1);
+                    rightString = userExpression.substring(i+1);
+
+                    System.out.println("leftS: "+leftString);
+                    System.out.println("oper: "+ operator);
+                    System.out.println("rs: "+rightString);
+
+                    int leftDecimalValue = Integer.parseInt(leftString,2);
+                    int rightDecimalValue = Integer.parseInt(rightString,2);
+                    System.out.println("converted value : "+ leftDecimalValue+operator+rightDecimalValue);
+                    return leftDecimalValue+operator+rightDecimalValue;
+                }
+                else if (userExpression.charAt(i) == '÷')
+                {
+                    leftString = userExpression.substring(0, i);
+                    operator = userExpression.substring(i, i+1);
+                    rightString = userExpression.substring(i+1);
+
+                    System.out.println("leftS: "+leftString);
+                    System.out.println("oper: "+ operator);
+                    System.out.println("rs: "+rightString);
+
+                    int leftDecimalValue = Integer.parseInt(leftString,2);
+                    int rightDecimalValue = Integer.parseInt(rightString,2);
+
+                    return leftDecimalValue+operator+rightDecimalValue;
+                }
+                else if (userExpression.charAt(i) == '-')
+                {
+                    leftString = userExpression.substring(0, i);
+                    operator = userExpression.substring(i, i+1);
+                    rightString = userExpression.substring(i+1);
+
+                    System.out.println("leftS: "+leftString);
+                    System.out.println("oper: "+ operator);
+                    System.out.println("rs: "+rightString);
+
+                    int leftDecimalValue = Integer.parseInt(leftString,2);
+                    int rightDecimalValue = Integer.parseInt(rightString,2);
+
+                    return leftDecimalValue+operator+rightDecimalValue;
+                }
+                else if (userExpression.charAt(i) == '+')
+                {
+                    leftString = userExpression.substring(0, i);
+                    operator = userExpression.substring(i, i+1);
+                    rightString = userExpression.substring(i+1);
+
+                    System.out.println("leftS: "+leftString);
+                    System.out.println("oper: "+ operator);
+                    System.out.println("rs: "+rightString);
+
+                    int leftDecimalValue = Integer.parseInt(leftString,2);
+                    int rightDecimalValue = Integer.parseInt(rightString,2);
+
+                    return leftDecimalValue+operator+rightDecimalValue;
+                }
+            }
+
+        }
+        else if (state.getCurrentDataState().equals(HEX))
+        {
+            System.out.println("inside and state is : " + state.getCurrentDataState());
+            String leftString;
+            String operator;
+            String rightString;
+            for (int i = 0; i < userExpression.length(); i++)
+            {
+                System.out.println(userExpression.charAt(i));
+                if (userExpression.charAt(i) == '@')
+                {
+                    leftString = userExpression.substring(0, i);
+                    operator = userExpression.substring(i, i+2);
+                    rightString = userExpression.substring(i+2);
+
+                    System.out.println("leftS: "+leftString);
+                    System.out.println("oper: "+ operator);
+                    System.out.println("rs: "+rightString);
+
+                    int leftDecimalValue = Integer.parseInt(leftString,16);
+                    int rightDecimalValue = Integer.parseInt(rightString,16);
+
+                    return leftDecimalValue+operator+rightDecimalValue;
+                }
+                if (userExpression.charAt(i) == '×')
+                {
+                    leftString = userExpression.substring(0, i);
+                    operator = userExpression.substring(i, i+1);
+                    rightString = userExpression.substring(i+1);
+
+                    System.out.println("leftS: "+leftString);
+                    System.out.println("oper: "+ operator);
+                    System.out.println("rs: "+rightString);
+
+                    int leftDecimalValue = Integer.parseInt(leftString,16);
+                    int rightDecimalValue = Integer.parseInt(rightString,16);
+
+                    return leftDecimalValue+operator+rightDecimalValue;
+                }
+                if (userExpression.charAt(i) == '÷')
+                {
+                    leftString = userExpression.substring(0, i);
+                    operator = userExpression.substring(i, i+1);
+                    rightString = userExpression.substring(i+1);
+
+                    System.out.println("leftS: "+leftString);
+                    System.out.println("oper: "+ operator);
+                    System.out.println("rs: "+rightString);
+
+                    int leftDecimalValue = Integer.parseInt(leftString,16);
+                    int rightDecimalValue = Integer.parseInt(rightString,16);
+
+                    return leftDecimalValue+operator+rightDecimalValue;
+                }
+                if (userExpression.charAt(i) == '-')
+                {
+                    leftString = userExpression.substring(0, i);
+                    operator = userExpression.substring(i, i+1);
+                    rightString = userExpression.substring(i+1);
+
+                    System.out.println("leftS: "+leftString);
+                    System.out.println("oper: "+ operator);
+                    System.out.println("rs: "+rightString);
+
+                    int leftDecimalValue = Integer.parseInt(leftString,16);
+                    int rightDecimalValue = Integer.parseInt(rightString,16);
+
+                    return leftDecimalValue+operator+rightDecimalValue;
+                }
+                if (userExpression.charAt(i) == '+')
+                {
+                    leftString = userExpression.substring(0, i);
+                    operator = userExpression.substring(i, i+1);
+                    rightString = userExpression.substring(i+1);
+
+                    System.out.println("leftS: "+leftString);
+                    System.out.println("oper: "+ operator);
+                    System.out.println("rs: "+rightString);
+
+                    int leftDecimalValue = Integer.parseInt(leftString,16);
+                    int rightDecimalValue = Integer.parseInt(rightString,16);
+
+                    return leftDecimalValue+operator+rightDecimalValue;
+                }
+
+            }
+
+        }
+
+        return userExpression;
     }
 
-    public void btnC(View view)
-    {
-        updateUserInput(getResources().getString(R.string.C));
 
-    }
 
-    public void btnD(View view)
-    {
-        updateUserInput(getResources().getString(R.string.D));
 
-    }
-
-    public void btnE(View view)
-    {
-        updateUserInput(getResources().getString(R.string.E));
-
-    }
-
-    public void btnF(View view)
-    {
-        updateUserInput(getResources().getString(R.string.F));
-
-    }
     public void clearBTN(View view)
     {
-//        operationChecker = false;
+        operationChecker = false;
+        notOperationChecker = false;
+        isOperationChecker = false;
         userInput.setText("");
         previousCalc.setText("");
     }
@@ -509,4 +1474,6 @@ public class ProgrammerCalculator extends AppCompatActivity {
             userInput.setSelection(cursorPositon-1);
         }
     }
+
+
 }
